@@ -12,8 +12,8 @@
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
     a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
+    del, dfn, img, ins, kbd, q, s, samp,
+    small, strike, sub, sup, tt, var,
     b, u, i, center,
     dl, dt, dd, ol, ul, li,
     fieldset, form, label, legend,
@@ -36,9 +36,6 @@
     }
     body {
       line-height: 1;
-    }
-    ol, ul {
-      list-style: none;
     }
     blockquote, q {
       quotes: none;
@@ -67,33 +64,22 @@
       pf
     */
     body {
-      background: url(its-a-bridge.jpg);
-      color: white;
-      font-family: Helvetica, sans-serif;
+      font-family: Futura, Helvetica, sans-serif;
+      font-size: 1.3em;
       line-height: 1.4em;
+      text-align: center;
+      padding-top: 50px;
     }
     section {
-      padding: 50px 75px; 
-      position: absolute;
-      bottom: 0;
-      top: 0;
-      max-width: 350px;
-    }
-    section:after {
-      content: "";
-      background: black;
-      opacity: 0.5;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      position: absolute;
-      z-index: -1;   
+      margin: 50px auto;
+      max-width: 660px;
+      text-align: left;
     }
     h1 {
       font-size: 1.5em;
-      gont-weight: bold;
+      font-weight: bold;
       margin-bottom: 1em;
+      text-align: center;
     }
     p {
       margin-bottom: 1em;
@@ -101,14 +87,57 @@
     a {
       color: #E69B5A;
     }
+    ul {
+      list-style-type: hiragana;
+      margin: 0 0 1em 2em;
+      padding: 0;
+    }
+    .aside {
+      color: #999;
+      font-size: 62%;
+      font-style: italic;
+    }
+    .otherthings a {
+      color: black;
+      text-decoration: none;
+    }
+    .otherthings a .extra {
+      display: none;
+    }
+    .otherthings a:hover .main {
+      text-decoration: underline;
+    }
+    .otherthings a:hover .extra {
+      display: inline;
+    }
   </style>
 </head>
 <body>
   <section>
-    <h1>Hello, I'm Patrick Filler.</h1>
-    <p>I'm a front-end developer at <a href="http://getharvest.com/">Harvest</a> where I build software that helps people make money. I also build open source things like <a href="http://harvesthq.github.io/chosen/">Chosen</a> and <a href="http://harvesthq.github.io/Sidetap/">Sidetap</a>. This is me on <a href="https://github.com/pfiller">GitHub</a>.</p>
-    <p>My wife, <a href="http://kristinafiller.com">Kristina</a>, is an awesome designer and illustrator who specializes in food packaging. She and I have spent the past year+ travelling the U.S. in search of all that is awesome. Some of my favorite places include <a href="http://instagram.com/p/RUBWR6hS1W/">Arches</a>, <a href="http://instagram.com/p/QWQxJFBSxB/">Yosemite</a> and <a href="http://instagram.com/p/PEG2RYhSzE/">Olympic</a>. If you're curious where we are, you can usually guess by following me on <a href="http://instagram.com/pfiller/">Instagram</a> or <a href="https://twitter.com/pfiller">Twitter</a>.</p>
-    <p>Surely that's enough links for you?</p>
+    <h1>Hi, I'm Patrick</h1>
   </section>
+  <section>
+    <p>I like to think of myself as a human swiss army knife – able to fold into the correct configuration to accomplish the task at hand. My skillset is fluid and I get bored when I'm stuck doing the same thing for too long. I seek out work that is meaningful, challenging, and fun.</p>
+    <p>I've spent the past <strong>7+ years</strong> with the team at <strong><a href="http://www.getharvest.com/">Harvest</a></strong> where I am currently serving as <strong>HR Lead</strong>.<br>
+    <span class="aside">(a <em>totally</em> normal progression from developer, thankyouverymuch)</span></p>
+    <p>Other things I've done:</p>
+    <ul class="otherthings">
+      <li>Web Developer</li>
+      <li><a href="https://www.airbnb.com/rooms/4105042"><span class="main">Airbnb Host</span>
+        <span class="extra"> – you can sleep in my bed!</span></a></li>
+      <li>Event Planner</li>
+      <li><a href="https://www.instagram.com/p/BVc6EfvAe35/?taken-by=kstar810"><span class="main">Explorer</span>
+        <span class="extra"> – we just hit our 50th state!</span></a></li></a></li>
+      <li><a href="https://github.com/harvesthq/chosen/graphs/contributors"><span class="main">Chosen Creator</span>
+        <span class="extra"> – over 20,000 stars on the Githubs!</span></a></li></a></li>
+      <li>Property Manager</li>
+      <li>Fashion Mogul</li>
+      <li>Soccer Referee</li>
+      <li>Activity Aid</li>
+    </ul>
+    <p class="aside">(I don't speak Japanese, but holy smokes did you know you could make an ordered list with hirigana!?)
+    <p>I'm not currently looking for a new gig, but I like to chat with interesting people. Feel free to say hello!</p>
+    <p class="aside">If you're really stalky, you can find me on <a href="http://twitter.com/pfiller">Twitter</a> and <a href="http://instagram.com/pfiller">Instagram</a>.</p
+  </section>  
 </body>
 </html>
