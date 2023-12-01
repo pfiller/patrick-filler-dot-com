@@ -8,28 +8,28 @@ title: Patrick Filler
 <section>
   <p>This is my Letterbird contact form. You can send me an email if you want.</p>
 
-  <script type="text/javascript" id="letterbirdEmbed" data-letterbirduser="pf" data-showheader="false">
+  <script type="text/javascript" data-letterbirduser="pf" data-showheader="false">
     (function() {
       let iframeminheight = 550;
 
-      const scriptTag = document.getElementById("letterbirdEmbed");
+      const options = document.currentScript.dataset;
       const iframe = document.createElement("iframe");
 
-      if(!scriptTag.dataset.letterbirduser){
+      if(!options.letterbirduser){
         console.warn("No letterbird user provided. Please add data-letterbirduser parameter to your script tag!");
         return;
       }
 
       let iframeurl = "https://letterbird.";
-      iframeurl += scriptTag.dataset.tld || "co";
-      iframeurl += `/${scriptTag.dataset.letterbirduser}`
+      iframeurl += options.tld || "co";
+      iframeurl += `/${options.letterbirduser}`
       iframeurl += `?origin=${window.origin}`
 
       let queryparams = [];
-      if(scriptTag.dataset.transparentbg!=="false"){
+      if(options.transparentbg!=="false"){
         queryparams.push("transparent=1");
       }
-      if(scriptTag.dataset.showheader==="false"){
+      if(options.showheader==="false"){
         iframeminheight = 450;
         queryparams.push("hideheader=1");
       }
@@ -41,10 +41,10 @@ title: Patrick Filler
 
 
       const css = document.createElement("style");
-      css.innerHTML = `iframe { border: 0; width: ${scriptTag.dataset.framewidth || "100%"}; min-width: 600px; min-height: ${iframeminheight}px; display:block; }`;
+      css.innerHTML = `iframe { border: 0; width: ${options.framewidth || "100%"}; min-width: 600px; min-height: ${iframeminheight}px; display:block; }`;
       document.head.appendChild(css);
 
-      scriptTag.parentNode.insertBefore(iframe, scriptTag);
+      document.currentScript.parentNode.insertBefore(iframe, document.currentScript);
 
       window.addEventListener("message", (evt) => {
         if(evt.origin !== new URL(iframe.src).origin) return;
