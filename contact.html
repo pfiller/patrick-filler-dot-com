@@ -7,49 +7,5 @@ title: Patrick Filler
 </section>
 <section>
   <p>This is my Letterbird contact form. You can send me an email if you want.</p>
-
-  <script type="text/javascript" data-letterbirduser="pf" data-showheader="false">
-    (function() {
-      let iframeminheight = 550;
-
-      const options = document.currentScript.dataset;
-      const iframe = document.createElement("iframe");
-
-      if(!options.letterbirduser){
-        console.warn("No letterbird user provided. Please add data-letterbirduser parameter to your script tag!");
-        return;
-      }
-
-      let iframeurl = "https://letterbird.";
-      iframeurl += options.tld || "co";
-      iframeurl += `/${options.letterbirduser}`
-      iframeurl += `?origin=${window.origin}`
-
-      let queryparams = [];
-      if(options.transparentbg!=="false"){
-        queryparams.push("transparent=1");
-      }
-      if(options.showheader==="false"){
-        iframeminheight = 450;
-        queryparams.push("hideheader=1");
-      }
-      if(queryparams.length){
-        iframeurl += `&${queryparams.join("&")}`;
-      }
-
-      iframe.src = iframeurl;
-
-
-      const css = document.createElement("style");
-      css.innerHTML = `iframe { border: 0; width: ${options.framewidth || "100%"}; min-width: 600px; min-height: ${iframeminheight}px; display:block; }`;
-      document.head.appendChild(css);
-
-      document.currentScript.parentNode.insertBefore(iframe, document.currentScript);
-
-      window.addEventListener("message", (evt) => {
-        if(evt.origin !== new URL(iframe.src).origin) return;
-        iframe.setAttribute("height", parseInt(evt.data,10)+"px");
-      })
-    })();
-  </script>
+  <script data-letterbirduser="pf" src="https://letterbird.co/embed/v1.js"></script>
 </section>
